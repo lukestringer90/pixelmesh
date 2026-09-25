@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1001 /* PixelmeshIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001 /* PixelmeshIOSApp.swift */; };
+		1002 /* PixelmeshWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2002 /* PixelmeshWebView.swift */; };
+		1003 /* BridgeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2003 /* BridgeCoordinator.swift */; };
+		1004 /* PhoneWatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2004 /* PhoneWatchSessionManager.swift */; };
+		1005 /* KeepAwakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2005 /* KeepAwakeService.swift */; };
+		1006 /* DebugDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006 /* DebugDrawerView.swift */; };
+		1007 /* offline_mock.html in Resources */ = {isa = PBXBuildFile; fileRef = 2007 /* offline_mock.html */; };
+		1008 /* WatchMeshEnvelope.swift in Sources (iOS) */ = {isa = PBXBuildFile; fileRef = 2008 /* WatchMeshEnvelope.swift */; };
+		1009 /* EffectParameters.swift in Sources (iOS) */ = {isa = PBXBuildFile; fileRef = 2009 /* EffectParameters.swift */; };
+		1010 /* RGBColor.swift in Sources (iOS) */ = {isa = PBXBuildFile; fileRef = 2010 /* RGBColor.swift */; };
+		1011 /* EffectShaderEvaluator.swift in Sources (iOS) */ = {isa = PBXBuildFile; fileRef = 2011 /* EffectShaderEvaluator.swift */; };
+
+		1020 /* PixelmeshWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020 /* PixelmeshWatchApp.swift */; };
+		1021 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2021 /* ContentView.swift */; };
+		1022 /* UnpairedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2022 /* UnpairedView.swift */; };
+		1023 /* WatchWaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023 /* WatchWaitingView.swift */; };
+		1024 /* WatchLocatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024 /* WatchLocatedView.swift */; };
+		1025 /* WatchEffectRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2025 /* WatchEffectRenderView.swift */; };
+		1026 /* WatchStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026 /* WatchStateManager.swift */; };
+		1027 /* WatchConnectivityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027 /* WatchConnectivityReceiver.swift */; };
+		1028 /* WatchMeshEnvelope.swift in Sources (Watch) */ = {isa = PBXBuildFile; fileRef = 2008 /* WatchMeshEnvelope.swift */; };
+		1029 /* EffectParameters.swift in Sources (Watch) */ = {isa = PBXBuildFile; fileRef = 2009 /* EffectParameters.swift */; };
+		1030 /* RGBColor.swift in Sources (Watch) */ = {isa = PBXBuildFile; fileRef = 2010 /* RGBColor.swift */; };
+		1031 /* EffectShaderEvaluator.swift in Sources (Watch) */ = {isa = PBXBuildFile; fileRef = 2011 /* EffectShaderEvaluator.swift */; };
+		1040 /* PixelmeshWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3002 /* PixelmeshWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3002;
+			remoteInfo = PixelmeshWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5001 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1040 /* PixelmeshWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2001 /* PixelmeshIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmeshIOSApp.swift; sourceTree = "<group>"; };
+		2002 /* PixelmeshWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmeshWebView.swift; sourceTree = "<group>"; };
+		2003 /* BridgeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeCoordinator.swift; sourceTree = "<group>"; };
+		2004 /* PhoneWatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneWatchSessionManager.swift; sourceTree = "<group>"; };
+		2005 /* KeepAwakeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepAwakeService.swift; sourceTree = "<group>"; };
+		2006 /* DebugDrawerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugDrawerView.swift; sourceTree = "<group>"; };
+		2007 /* offline_mock.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = offline_mock.html; sourceTree = "<group>"; };
+		2008 /* WatchMeshEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchMeshEnvelope.swift; path = ../Sources/PixelmeshCore/Models/WatchMeshEnvelope.swift; sourceTree = "<group>"; };
+		2009 /* EffectParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EffectParameters.swift; path = ../Sources/PixelmeshCore/Models/EffectParameters.swift; sourceTree = "<group>"; };
+		2010 /* RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RGBColor.swift; path = ../Sources/PixelmeshCore/Shaders/RGBColor.swift; sourceTree = "<group>"; };
+		2011 /* EffectShaderEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EffectShaderEvaluator.swift; path = ../Sources/PixelmeshCore/Shaders/EffectShaderEvaluator.swift; sourceTree = "<group>"; };
+		2012 /* Info.plist (iOS) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		2020 /* PixelmeshWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelmeshWatchApp.swift; sourceTree = "<group>"; };
+		2021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2022 /* UnpairedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnpairedView.swift; sourceTree = "<group>"; };
+		2023 /* WatchWaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchWaitingView.swift; sourceTree = "<group>"; };
+		2024 /* WatchLocatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLocatedView.swift; sourceTree = "<group>"; };
+		2025 /* WatchEffectRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchEffectRenderView.swift; sourceTree = "<group>"; };
+		2026 /* WatchStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchStateManager.swift; sourceTree = "<group>"; };
+		2027 /* WatchConnectivityReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityReceiver.swift; sourceTree = "<group>"; };
+		2028 /* Info.plist (Watch) */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		3001 /* PixelmeshCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelmeshCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3002 /* PixelmeshWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PixelmeshWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7001 = {
+			isa = PBXGroup;
+			children = (
+				7002 /* iOS */,
+				7003 /* Watch */,
+				7004 /* Core */,
+				7005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7002 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2001 /* PixelmeshIOSApp.swift */,
+				2002 /* PixelmeshWebView.swift */,
+				2003 /* BridgeCoordinator.swift */,
+				2004 /* PhoneWatchSessionManager.swift */,
+				2005 /* KeepAwakeService.swift */,
+				2006 /* DebugDrawerView.swift */,
+				2007 /* offline_mock.html */,
+				2012 /* Info.plist (iOS) */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		7003 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				2020 /* PixelmeshWatchApp.swift */,
+				2021 /* ContentView.swift */,
+				2022 /* UnpairedView.swift */,
+				2023 /* WatchWaitingView.swift */,
+				2024 /* WatchLocatedView.swift */,
+				2025 /* WatchEffectRenderView.swift */,
+				2026 /* WatchStateManager.swift */,
+				2027 /* WatchConnectivityReceiver.swift */,
+				2028 /* Info.plist (Watch) */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		7004 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2008 /* WatchMeshEnvelope.swift */,
+				2009 /* EffectParameters.swift */,
+				2010 /* RGBColor.swift */,
+				2011 /* EffectShaderEvaluator.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		7005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3001 /* PixelmeshCompanion.app */,
+				3002 /* PixelmeshWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8001 /* PixelmeshCompanion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9001 /* Build configuration list for PBXNativeTarget "PixelmeshCompanion" */;
+			buildPhases = (
+				8101 /* Sources */,
+				6001 /* Frameworks */,
+				8201 /* Resources */,
+				5001 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8301 /* PBXTargetDependency */,
+			);
+			name = PixelmeshCompanion;
+			productName = PixelmeshCompanion;
+			productReference = 3001 /* PixelmeshCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8002 /* PixelmeshWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9002 /* Build configuration list for PBXNativeTarget "PixelmeshWatch" */;
+			buildPhases = (
+				8102 /* Sources */,
+				6002 /* Frameworks */,
+				8202 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PixelmeshWatch;
+			productName = PixelmeshWatch;
+			productReference = 3002 /* PixelmeshWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					8002 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 9000 /* Build configuration list for PBXProject "PixelmeshCompanion" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7001;
+			productRefGroup = 7005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8001 /* PixelmeshCompanion */,
+				8002 /* PixelmeshWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8201 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1007 /* offline_mock.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8202 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8101 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1001 /* PixelmeshIOSApp.swift in Sources */,
+				1002 /* PixelmeshWebView.swift in Sources */,
+				1003 /* BridgeCoordinator.swift in Sources */,
+				1004 /* PhoneWatchSessionManager.swift in Sources */,
+				1005 /* KeepAwakeService.swift in Sources */,
+				1006 /* DebugDrawerView.swift in Sources */,
+				1008 /* WatchMeshEnvelope.swift in Sources (iOS) */,
+				1009 /* EffectParameters.swift in Sources (iOS) */,
+				1010 /* RGBColor.swift in Sources (iOS) */,
+				1011 /* EffectShaderEvaluator.swift in Sources (iOS) */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8102 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1020 /* PixelmeshWatchApp.swift in Sources */,
+				1021 /* ContentView.swift in Sources */,
+				1022 /* UnpairedView.swift in Sources */,
+				1023 /* WatchWaitingView.swift in Sources */,
+				1024 /* WatchLocatedView.swift in Sources */,
+				1025 /* WatchEffectRenderView.swift in Sources */,
+				1026 /* WatchStateManager.swift in Sources */,
+				1027 /* WatchConnectivityReceiver.swift in Sources */,
+				1028 /* WatchMeshEnvelope.swift in Sources (Watch) */,
+				1029 /* EffectParameters.swift in Sources (Watch) */,
+				1030 /* RGBColor.swift in Sources (Watch) */,
+				1031 /* EffectShaderEvaluator.swift in Sources (Watch) */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8301 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8002 /* PixelmeshWatch */;
+			targetProxy = 4001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9101 /* Debug (Project) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9102 /* Release (Project) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = "wholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9201 /* Debug (iOS) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = live.pixelmesh.companion.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9202 /* Release (iOS) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = live.pixelmesh.companion.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9301 /* Debug (Watch) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Watch/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = live.pixelmesh.companion.ios.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		9302 /* Release (Watch) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Watch/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = live.pixelmesh.companion.ios.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9000 /* Build configuration list for PBXProject "PixelmeshCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9101 /* Debug */,
+				9102 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9001 /* Build configuration list for PBXNativeTarget "PixelmeshCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9201 /* Debug */,
+				9202 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9002 /* Build configuration list for PBXNativeTarget "PixelmeshWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9301 /* Debug */,
+				9302 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 0001 /* Project object */;
+}

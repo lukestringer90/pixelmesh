@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<title>pixelmesh</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; background: #000; width: 100%; height: 100%;
+  overflow: hidden; touch-action: manipulation; user-select: none;
+  font-family: -apple-system, system-ui, sans-serif; color: #fff;
+}
+.bg-grid {
+  position: fixed; inset: 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 48px);
+}
+.container {
+  position: fixed; inset: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  text-align: center; padding: 32px 24px; gap: 16px;
+}
+.title { font-size: 32px; font-weight: 800; letter-spacing: -1px; margin-top: 24px; }
+.subtitle { font-size: 16px; color: rgba(255,255,255,0.6); margin-top: -8px; }
+.card {
+  margin-top: 16px; text-align: left; background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 12px 18px;
+  width: 100%; max-width: 320px; font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.7);
+}
+.card div { padding: 6px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.card div:first-child { border-top: 0; }
+.card b { color: #fff; margin-right: 8px; }
+.status-pill {
+  position: fixed; bottom: calc(24px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,0.08); border-radius: 999px; padding: 8px 16px;
+  font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8);
+  display: flex; align-items: center; gap: 8px;
+}
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #00e676; }
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="container">
+  <div class="title">pixelmesh</div>
+  <div class="subtitle">offline preview</div>
+  <div class="card">
+    <div><b>1</b>Keep this screen awake and bright.</div>
+    <div><b>2</b>Use the debug sheet or shake to simulate events.</div>
+    <div><b>3</b>State syncs directly to Apple Watch.</div>
+  </div>
+  <div class="status-pill">
+    <div class="status-dot"></div>
+    <span id="statusText">Companion connected (server offline)</span>
+  </div>
+</div>
+<script>
+window.__PIXELMESH_OFFLINE__ = true;
+window.simulateIncoming = function(json) {
+  if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.pixelmeshBridge) {
+    window.webkit.messageHandlers.pixelmeshBridge.postMessage(JSON.stringify(json));
+  }
+};
+</script>
+</body>
+</html>

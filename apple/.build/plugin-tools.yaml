@@ -1,0 +1,103 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "PixelmeshCore-arm64-apple-macosx-debug.module": ["<PixelmeshCore-arm64-apple-macosx-debug.module>"]
+  "PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe": ["<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe>"]
+  "PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module": ["<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module>"]
+  "main": ["<PixelmeshCore-arm64-apple-macosx-debug.module>","<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe>","<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module>"]
+  "test": ["<PixelmeshCore-arm64-apple-macosx-debug.module>","<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe>","<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCoreTestsRunner/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner":
+    is-mutated: true
+commands:
+  "/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Models/EffectParameters.swift","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Models/WatchMeshEnvelope.swift","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Shaders/EffectShaderEvaluator.swift","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Shaders/RGBColor.swift"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/sources"]
+    description: "Write auxiliary file /Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/sources"
+
+  "/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner-entitlement.plist"]
+    description: "Write auxiliary file /Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner-entitlement.plist"
+
+  "/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCoreTestsRunner/main.swift"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/sources"]
+    description: "Write auxiliary file /Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/sources"
+
+  "/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectParameters.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectShaderEvaluator.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/RGBColor.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/WatchMeshEnvelope.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/main.swift.o"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.product/Objects.LinkFileList"
+
+  "/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<PixelmeshCore-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectParameters.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/WatchMeshEnvelope.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectShaderEvaluator.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/RGBColor.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCore.swiftmodule"]
+    outputs: ["<PixelmeshCore-arm64-apple-macosx-debug.module>"]
+
+  "<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe>":
+    tool: phony
+    inputs: ["<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    outputs: ["<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe>"]
+
+  "<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/main.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCoreTestsRunner.swiftmodule"]
+    outputs: ["<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module>"]
+
+  "C.PixelmeshCore-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Models/EffectParameters.swift","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Models/WatchMeshEnvelope.swift","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Shaders/EffectShaderEvaluator.swift","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/Shaders/RGBColor.swift","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/sources"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectParameters.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/WatchMeshEnvelope.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectShaderEvaluator.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/RGBColor.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCore.swiftmodule"]
+    description: "Compiling Swift Module 'PixelmeshCore' (4 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","PixelmeshCore","-emit-dependencies","-emit-module","-emit-module-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCore.swiftmodule","-output-file-map","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/sources","-I","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/include/PixelmeshCore-Swift.h","-swift-version","6","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","apple"]
+
+  "C.PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe":
+    tool: shell
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectParameters.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/EffectShaderEvaluator.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/RGBColor.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCore.build/WatchMeshEnvelope.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/main.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.product/Objects.LinkFileList"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug","-o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner","-module-name","PixelmeshCoreTestsRunner","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_PixelmeshCoreTestsRunner_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCore.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCoreTestsRunner.swiftmodule","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g"]
+
+  "C.PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner-entitlement.plist"]
+    outputs: ["<PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner-entitlement.plist","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner"]
+
+  "C.PixelmeshCoreTestsRunner-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCoreTestsRunner/main.swift","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCore.swiftmodule","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/sources"]
+    outputs: ["/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/main.swift.o","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCoreTestsRunner.swiftmodule"]
+    description: "Compiling Swift Module 'PixelmeshCoreTestsRunner' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","PixelmeshCoreTestsRunner","-emit-dependencies","-emit-module","-emit-module-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules/PixelmeshCoreTestsRunner.swiftmodule","-output-file-map","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/output-file-map.json","-incremental","-c","@/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/PixelmeshCoreTestsRunner.build/sources","-I","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j8","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/lukestringer/Developer/pixelmesh/apple/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","PixelmeshCoreTestsRunner_main","-parse-as-library","-swift-version","6","-I","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-L","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-plugin-path","/Library/Developer/CommandLineTools/usr/lib/swift/host/plugins/testing","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","apple"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCore/","/Users/lukestringer/Developer/pixelmesh/apple/Sources/PixelmeshCoreTestsRunner/","/Users/lukestringer/Developer/pixelmesh/apple/Package.swift","/Users/lukestringer/Developer/pixelmesh/apple/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
